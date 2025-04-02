@@ -32,7 +32,7 @@ languages:
         enabled: true                        # 启用个人简介模式
         title: 独立之精神，自由之思想         # 个人简介的标题
         subtitle: "👏🏼欢迎光临寒舍</br>👇联系方式"  # 个人简介的副标题，支持 HTML 标签换行
-        imageUrl: "img/logo.gif"               # 个人简介中显示的头像或标志图片路径
+        imageUrl: "avatar.png"               # 个人简介中显示的头像或标志图片路径
         imageTitle:                          # 图片标题（此处留空）
         imageWidth: 150                      # 图片宽度
         imageHeight: 150                     # 图片高度
@@ -78,10 +78,10 @@ languages:
           name: 🙋🏻‍♂️关于                  # 菜单项显示名称：关于
           url: /about                      # 指向“关于”页面
           weight: 50
-        # - identifier: links                 # 友情链接菜单项示例（当前被注释掉）
-        #   name: 🤝友链
-        #   url: links
-        #   weight: 60
+        - identifier: links                 # 友情链接菜单项示例（当前被注释掉）
+          name: 🤝友链
+          url: /links
+          weight: 60
 
 
 
@@ -97,7 +97,7 @@ params:
   defaultTheme: auto                      # 默认主题模式，auto 表示自动选择（默认暗色背景）
   disableThemeToggle: false               # 允许主题切换按钮
   DateFormat: "2006-01-02"                # 日期格式（按照 Go 语言格式化规则）
-  ShowShareButtons: true                  # 显示分享按钮
+  ShowShareButtons: false                  # 显示分享按钮
   ShowReadingTime: true                   # 展示预估的阅读时长
   displayFullLangName: true               # 展示完整的语言名称
   ShowPostNavLinks: true                  # 展示文章导航链接（上一篇、下一篇）
@@ -137,19 +137,11 @@ params:
   socialIcons:
     - name: github
       title: Follow my Github
-      url: "https://github.com/sonnycalcr"
-    - name: X
-      title: Follow my Twitter
-      url: "https://x.com/sonnycalcr"
+      url: "https://github.com/Ahaitang"
     - name: Bilibili
       title: 关注我的 B 站帐号
-      url: "https://space.bilibili.com/3493138859559908"
-    - name: Youtube
-      title: Follow my Youtube Channel
-      url: "https://youtube.com/@sonnycalcr"
-    - name: Telegram
-      title: Contact Me
-      url: "https://t.me/sonnycalcr"
+      url: https://space.bilibili.com/437520071?spm_id_from=333.1007.0.0
+
   # 封面图
   # cover:
     #     hidden: true                  # 隐藏封面图（仅对结构化数据隐藏，页面仍可能显示）（被注释掉）
@@ -183,14 +175,14 @@ params:
     darkTheme: "dark"
     lang: "zh-CN"
     crossorigin: "anonymous"
-  # 设置网站的标签页的图标，即 favicon
 
+  # 设置网站的标签页的图标，即 favicon
   assets:
-      favicon: "favicon.png"
-      favicon16x16: "favicon.png"
-      favicon32x32: "favicon.png"
-      apple_touch_icon: "favicon.png"
-      safari_pinned_tab: "favicon.png"    
+      favicon: "avatar.png"
+      favicon16x16: "avatar.png"
+      favicon32x32: "avatar.png"
+      apple_touch_icon: "avatar.png"
+      safari_pinned_tab: "avatar.png"    
 
 # https://github.com/adityatelange/hugo-PaperMod/wiki/Features#search-page
 outputs:
