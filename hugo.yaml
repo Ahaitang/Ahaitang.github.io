@@ -3,6 +3,7 @@ title: AHaiTang's Blog # 站点标题
 copyright: "[©2024 AHaiTang's Blog](https://ahaitang.github.io/)" # 网站的版权声明，通常显示在页脚
 theme: PaperMod # 主题
 languageCode: zh-cn # 语言
+paginate: 8 # 每页展示的文章数量
 
 enableInlineShortcodes: true # shortcode，类似于模板变量，可以在写 markdown 的时候便捷地插入，官方文档中有一个视频讲的很通俗
 hasCJKLanguage: true # 是否有 CJK 的字符
@@ -15,77 +16,123 @@ pygmentsUseClasses: true
 defaultContentLanguage: zh # 顶部首先展示的语言界面
 defaultContentLanguageInSubdir: false # 是否要在地址栏加上默认的语言代码
 
+minify:
+    disableXML: true                         # 禁用对 XML 文件的压缩
+    # minifyOutput: true                      # 可启用所有输出文件的压缩（当前被注释掉）
+
+permalinks:
+  post: "/:title/"                           # 定义文章永久链接结构，这里使用文章标题作为 URL 部分
+  # post: "/:year/:month/:day/:title/"        # 另一种链接格式示例（按年月日分层），目前被注释掉
 
 languages:
   zh:
     languageName: "中文" # 展示的语言名
     weight: 1 # 权重
+    profileMode:
+        enabled: true                        # 启用个人简介模式
+        title: 独立之精神，自由之思想         # 个人简介的标题
+        subtitle: "👏🏼欢迎光临寒舍</br>👇联系方式"  # 个人简介的副标题，支持 HTML 标签换行
+        imageUrl: "img/logo.gif"               # 个人简介中显示的头像或标志图片路径
+        imageTitle:                          # 图片标题（此处留空）
+        imageWidth: 150                      # 图片宽度
+        imageHeight: 150                     # 图片高度
+        buttons:                             # 个人简介下方的按钮列表
+          - name: 👨🏻‍💻 环境                # 按钮名称
+            url: posts/env                  # 按钮链接地址
+          - name: 📕 学习
+            url: posts/learn
+          - name: 🏖 生活
+            url: posts/life
+
     taxonomies: # 分类系统
       category: categories
       tag: tags
     # https://gohugo.io/content-management/menus/#define-in-site-configuration
     menus:
       main:
-        - name: 首页
-          pageRef: /
-          weight: 4 # 控制在页面上展示的前后顺序
-        - name: 归档
-          pageRef: archives/
-          weight: 5
-        - name: 分类
-          pageRef: categories/
-          weight: 10
-        - name: 标签
-          pageRef: tags/
-          weight: 10
-        - name: 搜索
-          pageRef: search/
+        - identifier: search               # 菜单项标识符
+          name: 🔍搜索                     # 菜单项显示名称：搜索
+          url: search/                      # 菜单链接地址
+          weight: 1                        # 菜单项排序权重
+        - identifier: home
+          name: 🏠主页                     # 菜单项显示名称：主页
+          url: /                           # 链接到网站根目录
+          weight: 2
+        - identifier: posts
+          name: 📚文章                     # 菜单项显示名称：文章
+          url: /posts                      # 指向文章列表页
+          weight: 3
+        - identifier: archives
+          name: ⏱时间轴                    # 菜单项显示名称：时间轴
+          url: /archives                   # 指向归档页面
           weight: 20
-        - name: 关于
-          pageRef: about/
-          weight: 21
+        - identifier: categories           # 分类菜单项示例（当前被注释掉）
+          name: 🧩分类
+          url: /categories
+          weight: 30
+        - identifier: tags
+          name: 🔖标签                     # 菜单项显示名称：标签
+          url: /tags                       # 指向标签页面
+          weight: 40
+        - identifier: about
+          name: 🙋🏻‍♂️关于                  # 菜单项显示名称：关于
+          url: /about                      # 指向“关于”页面
+          weight: 50
+        # - identifier: links                 # 友情链接菜单项示例（当前被注释掉）
+        #   name: 🤝友链
+        #   url: links
+        #   weight: 60
+
+
+
 
 # ~~~~~~~~~
 # 主题的配置(基本上是)
 # ~~~~~~~~~
-paginate: 8 # 每页展示的文章数量，这个没找到文档，应该是主题自己设置的
 
 params:
-  env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
-  author: Sonny Calcr
-  defaultTheme: dark # 默认是暗色背景
-  ShowShareButtons: false # 关闭分享的按钮
-  ShowReadingTime: true # 展示预估的阅读时长
-  displayFullLangName: true # 展示全名
-  ShowPostNavLinks: true # 展示文章导航链接，就是下一页上一页的那个
-  ShowBreadCrumbs: false # 是否展示标题上方的面包屑
-  ShowCodeCopyButtons: true # 是否展示复制代码的按钮
-  ShowRssButtonInSectionTermList: true # RSS 相关
-  ShowAllPagesInArchive: true # 在归档页面展示所有的页面
-  ShowPageNums: true # 展示页面的页数
-  ShowToc: true # 展示文章详情页的目录
-  comments: true # 评论
+  env: production                        # 当前环境设置为 production，用于启用 GA、OpenGraph、Twitter Cards 等功能
+  description: "这是一个纯粹的博客......"   # 网站描述
+  author: AHaiTang                        # 默认文章作者（此处选择了 AHaiTang，如需使用 Shaohan Tian 可自行修改）
+  defaultTheme: auto                      # 默认主题模式，auto 表示自动选择（默认暗色背景）
+  disableThemeToggle: false               # 允许主题切换按钮
+  DateFormat: "2006-01-02"                # 日期格式（按照 Go 语言格式化规则）
+  ShowShareButtons: true                  # 显示分享按钮
+  ShowReadingTime: true                   # 展示预估的阅读时长
+  displayFullLangName: true               # 展示完整的语言名称
+  ShowPostNavLinks: true                  # 展示文章导航链接（上一篇、下一篇）
+  ShowBreadCrumbs: true                  # 是否展示标题上方的面包屑（合并时选择 false，如需显示可改为 true）
+  ShowCodeCopyButtons: true               # 展示复制代码按钮
+  ShowRssButtonInSectionTermList: true    # 在分类/标签页中展示 RSS 按钮
+  ShowAllPagesInArchive: true             # 在归档页面展示所有页面
+  ShowPageNums: true                      # 展示页面的页数
+  hideFooter: false                       # 显示页脚（false 表示不隐藏）
+  ShowWordCounts: true                    # 显示文章字数统计
+  VisitCount: true                        # 显示访问量计数
+  ShowLastMod: true                       # 显示文章最后修改时间
+  ShowToc: true                           # 展示文章详情页的目录
+  TocOpen: true                           # 默认展开目录
+  comments: true                          # 启用评论功能
   images: ["https://i.postimg.cc/7hwBy7VS/calcr.png"] # 缺省的图片，比如，博客的封面
-  DateFormat: "2006-01-02" # 这个时间是作者自己写的，只能这样写
 
-  # 首页的文章上方的一些信息
-  homeInfoParams:
-    # 首页的 profile 内容
-    Title: "Hey Friend👋"
-    # 首页的 profile 内容
-    Content: >
-      Welcome to my Blog! 这里主要记录了我的视频创作的一些补充说明材料。博客因为是托管在 Github 上面，以及，图床使用的是国外免费的 Postimages，所以，挂上一个梯子可能会让访问更加顺畅。
-      <br>
-      也可以在其他地方访问我的文字材料，如下：
-      <br>
-      <div>
-      ● [SonnyCalcr's Notion](https://www.notion.so/luflyan/b5ee8643e563498b96c6b7ab0f27343b)
-      <br>
-      ● [博客园](https://www.cnblogs.com/fanlumaster)
-      <br>
-      ● My personal username of Discord is sonnycalcr, and, welcome to my [Discord Group/Server](https://discord.gg/HCebZMrfhE), maybe just to talk about some simple problems.
-      </div>
+
+  # # 首页的文章上方的一些信息
+  # homeInfoParams:
+  #   # 首页的 profile 内容
+  #   Title: "Hey Friend👋"
+  #   # 首页的 profile 内容
+  #   Content: >
+  #     Welcome to my Blog! 这里主要记录了我的视频创作的一些补充说明材料。博客因为是托管在 Github 上面，以及，图床使用的是国外免费的 Postimages，所以，挂上一个梯子可能会让访问更加顺畅。
+  #     <br>
+  #     也可以在其他地方访问我的文字材料，如下：
+  #     <br>
+  #     <div>
+  #     ● [SonnyCalcr's Notion](https://www.notion.so/luflyan/b5ee8643e563498b96c6b7ab0f27343b)
+  #     <br>
+  #     ● [博客园](https://www.cnblogs.com/fanlumaster)
+  #     <br>
+  #     ● My personal username of Discord is sonnycalcr, and, welcome to my [Discord Group/Server](https://discord.gg/HCebZMrfhE), maybe just to talk about some simple problems.
+  #     </div>
   # 社交帐号的按钮
   socialIcons:
     - name: github
@@ -103,6 +150,11 @@ params:
     - name: Telegram
       title: Contact Me
       url: "https://t.me/sonnycalcr"
+  # 封面图
+  # cover:
+    #     hidden: true                  # 隐藏封面图（仅对结构化数据隐藏，页面仍可能显示）（被注释掉）
+    #     hiddenInList: true            # 在列表页和首页隐藏封面图（被注释掉）
+    #     hiddenInSingle: true          # 在文章详情页隐藏封面图（被注释掉）
 
   # 搜索
   fuseOpts:
@@ -115,6 +167,7 @@ params:
       # limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
       keys: ["title", "permalink", "summary", "content"]
       includeMatches: true
+
   # 评论的设置
   giscus:
     repo: "Ahaitang/Ahaitang.github.io"
@@ -131,6 +184,7 @@ params:
     lang: "zh-CN"
     crossorigin: "anonymous"
   # 设置网站的标签页的图标，即 favicon
+
   assets:
       favicon: "favicon.png"
       favicon16x16: "favicon.png"
@@ -146,15 +200,44 @@ outputs:
     - JSON # necessary for search, 这里的配置修改好之后，一定要重新生成一下
 
 markup:
-  goldmark:
-    renderer:
-      unsafe: true # 可以 unsafe，有些 html 标签和样式可能需要
-  highlight:
-    anchorLineNos: false # 不要给行号设置锚标
-    codeFences: true # 代码围栏
-    noClasses: false # TODO: 不知道干啥的，暂时没必要了解，不影响展示
-    lineNos: true # 代码行
-    lineNumbersInTable: false # 不要设置成 true，否则如果文章开头是代码的话，摘要会由一大堆数字(即代码行号)开头文章
-    # 这里设置 style 没用，得自己加 css
-    # style: "github-dark"
-    # style: monokai
+    goldmark:
+        renderer:
+            unsafe: true                # 允许渲染 Markdown 中的未转义 HTML 代码（注意安全风险）
+    highlight:
+        # anchorLineNos: true           # 行号锚点（被注释掉）
+        codeFences: true                # 启用代码围栏功能，使代码块有更好的展示效果
+        guessSyntax: true               # 自动猜测代码块的语言
+        lineNos: true                   # 显示代码块行号
+        # noClasses: false              # 使用内联样式（被注释掉）
+        # style: monokai                # 使用 Monokai 代码高亮风格（被注释掉）
+        style: darcula                  # 使用 Darcula 代码高亮风格
+
+        # 以下为代码高亮配置说明：
+        # codeFences：代码围栏功能，这个功能一般都要设为 true 的，不然很难看，就是干巴巴的-代码文字，没有颜色。
+        # guessSyntax：猜测语法，这个功能建议设置为 true, 如果你没有设置要显示的语言则会自动匹配。
+        # hl_Lines：高亮的行号，一般这个不设置，因为每个代码块我们可能希望让高亮的地方不一样。
+        # lineNoStart：行号从编号几开始，一般从 1 开始。
+        # lineNos：是否显示行号，我比较喜欢显示，所以我设置的为 true.
+        # lineNumbersInTable：使用表来格式化行号和代码,而不是 标签。这个属性一般设置为 true.
+        # noClasses：使用 class 标签，而不是内嵌的内联样式
+
+privacy:
+    vimeo:
+        disabled: false                 # 不禁用 Vimeo 嵌入视频的隐私设置
+        simple: true                    # 启用 Vimeo 简单模式
+    twitter:
+        disabled: false                 # 不禁用 Twitter 隐私设置
+        enableDNT: true                 # 启用 Twitter 的“请勿追踪”（DNT）功能
+        simple: true                    # 启用 Twitter 简单模式
+    instagram:
+        disabled: false                 # 不禁用 Instagram 隐私设置
+        simple: true                    # 启用 Instagram 简单模式
+    youtube:
+        disabled: false                 # 不禁用 YouTube 隐私设置
+        privacyEnhanced: true           # 启用 YouTube 隐私增强模式
+
+services:
+    instagram:
+        disableInlineCSS: true          # 禁用 Instagram 的内联 CSS 样式
+    twitter:
+        disableInlineCSS: true          # 禁用 Twitter 的内联 CSS 样式

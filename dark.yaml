@@ -1,0 +1,225 @@
+baseURL: https://www.shaohanyun.top         # 绑定的域名，定义网站的基本 URL
+title: Shaohan's Blog                        # 博客标题
+paginate: 10                                 # 首页每页显示的文章数
+theme: PaperMod                              # 使用的主题名称，对应 themes 文件夹下的主题目录
+languageCode: zh-cn                          # 网站默认语言代码（中文）
+
+hasCJKLanguage: true                         # 自动检测是否包含中文、日文、韩文字符，适合大量使用中文引号的文章
+enableInlineShortcodes: true                 # 启用内联短代码功能
+enableEmoji: true                            # 允许使用 Emoji 表情（建议开启）
+enableRobotsTXT: true                        # 自动生成 robots.txt 文件，便于搜索引擎爬虫抓取
+buildDrafts: false                           # 不生成草稿状态的文章
+buildFuture: false                           # 不生成发布日期在未来的文章
+buildExpired: false                          # 不生成已过期的文章
+pygmentsUseClasses: true                     # 使用 Pygments 高亮代码时，采用 CSS 类而非内联样式
+# googleAnalytics: UA-123-45                  # Google Analytics 跟踪 ID（目前被注释掉）
+
+minify:
+    disableXML: true                         # 禁用对 XML 文件的压缩
+    # minifyOutput: true                      # 可启用所有输出文件的压缩（当前被注释掉）
+
+permalinks:
+  post: "/:title/"                           # 定义文章永久链接结构，这里使用文章标题作为 URL 部分
+  # post: "/:year/:month/:day/:title/"        # 另一种链接格式示例（按年月日分层），目前被注释掉
+
+defaultContentLanguage: zh                   # 网站默认内容语言
+defaultContentLanguageInSubdir: true         # 是否将默认语言的内容放在子目录中
+
+languages:
+    zh:
+      languageName: "Chinese"                # 显示的语言名称
+      # contentDir: content/english           # 可自定义内容存放目录（此处被注释掉）
+      weight: 1                              # 语言权重，用于排序，数值越小显示越靠前
+      profileMode:
+        enabled: true                        # 启用个人简介模式
+        title: 独立之精神，自由之思想         # 个人简介的标题
+        subtitle: "👏🏼欢迎光临寒舍</br>👇联系方式"  # 个人简介的副标题，支持 HTML 标签换行
+        imageUrl: "img/logo.gif"               # 个人简介中显示的头像或标志图片路径
+        imageTitle:                          # 图片标题（此处留空）
+        imageWidth: 150                      # 图片宽度
+        imageHeight: 150                     # 图片高度
+        buttons:                             # 个人简介下方的按钮列表
+          - name: 👨🏻‍💻技术                  # 按钮名称
+            url: posts/tech                  # 按钮链接地址
+          - name: 📕阅读
+            url: posts/read
+          - name: 🏖生活
+            url: posts/life
+
+      menu:
+        main:
+          - identifier: search               # 菜单项标识符
+            name: 🔍搜索                     # 菜单项显示名称：搜索
+            url: search/                      # 菜单链接地址
+            weight: 1                        # 菜单项排序权重
+          - identifier: home
+            name: 🏠主页                     # 菜单项显示名称：主页
+            url: /                           # 链接到网站根目录
+            weight: 2
+          - identifier: posts
+            name: 📚文章                     # 菜单项显示名称：文章
+            url: /posts                      # 指向文章列表页
+            weight: 3
+          - identifier: archives
+            name: ⏱时间轴                    # 菜单项显示名称：时间轴
+            url: /archives                   # 指向归档页面
+            weight: 20
+          # - identifier: categories           # 分类菜单项示例（当前被注释掉）
+          #   name: 🧩分类
+          #   url: categories
+          #   weight: 30
+          - identifier: tags
+            name: 🔖标签                     # 菜单项显示名称：标签
+            url: /tags                       # 指向标签页面
+            weight: 40
+          - identifier: about
+            name: 🙋🏻‍♂️关于                  # 菜单项显示名称：关于
+            url: /about                      # 指向“关于”页面
+            weight: 50
+          # - identifier: links                 # 友情链接菜单项示例（当前被注释掉）
+          #   name: 🤝友链
+          #   url: links
+          #   weight: 60
+
+outputs:
+    home:
+        - HTML                            # 首页生成 HTML 格式文件
+        - RSS                             # 首页生成 RSS 订阅文件
+        - JSON                            # 首页生成 JSON 格式文件
+
+params:
+    env: production                        # 当前环境设置为 production，用于启用 GA、OpenGraph、Twitter Cards 等功能
+    description: "这是一个纯粹的博客......"   # 网站描述
+    author: Shaohan Tian                    # 默认文章作者
+    # author: ["Me", "You"]                  # 多作者配置示例（被注释掉）
+
+    defaultTheme: auto                       # 默认主题模式，可选 auto、light 或 dark
+    disableThemeToggle: false                # 是否禁用主题切换按钮，false 表示允许切换
+    DateFormat: "2006-01-02"                  # 日期格式（按照 Go 语言的日期格式化规则）
+    ShowShareButtons: true                   # 显示分享按钮
+    ShowReadingTime: true                    # 显示阅读时间
+    # disableSpecialistPost: true           # 可用于禁用专家文章功能（被注释掉）
+    displayFullLangName: true                # 显示完整的语言名称
+    ShowPostNavLinks: true                   # 显示文章之间的导航链接
+    ShowBreadCrumbs: true                    # 显示面包屑导航
+    ShowCodeCopyButtons: true                # 显示代码复制按钮
+    hideFooter: false                        # 是否隐藏页脚，false 表示显示页脚
+    ShowWordCounts: true                     # 显示文章字数统计
+    VisitCount: true                         # 显示访问量计数
+
+    ShowLastMod: true                        # 显示文章最后修改时间
+
+    ShowToc: true                            # 显示文章目录（Table of Contents）
+    TocOpen: true                            # 默认展开目录
+
+    comments: true                           # 启用评论功能
+
+    socialIcons:                           # 社交图标配置
+        - name: github
+          url: "https://github.com/tianshaohan"  # Github 链接
+        # - name: twitter
+        #   url:  "img/twitter.png"          # Twitter 图标链接示例（被注释掉）
+        - name: bilibili
+          url: "https://space.bilibili.com/395280439"  # Bilibili 链接
+        - name: QQ
+          url: "img/qq.jpg"                 # QQ 图标或链接（可替换为实际链接）
+        - name: email
+          url: "mailto:shaohan.tian@foxmail.com"  # 邮箱地址链接
+        - name: RSS
+          url: "index.xml"                  # RSS 订阅地址
+        # - name: facebook
+        #   url: "https://www.facebook.com/profile.php?id=100027782410997"  # Facebook 链接示例（被注释掉）
+        # - name: instagram
+        #   url: "img/instagram.png"          # Instagram 图标链接（被注释掉）
+        # - name: QQ
+        #   url: "img/qq.png"                 # QQ 图标链接（被注释掉）
+        # - name: Phone
+        #   url: "img/phone.png"              # 电话图标链接（被注释掉）
+
+    # editPost:
+    #     URL: "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"  # 编辑文章的 GitHub 链接（被注释掉）
+    #     Text: "Suggest Changes"         # 编辑链接的显示文本（被注释掉）
+    #     appendFilePath: true            # 是否在编辑链接中追加文件路径（被注释掉）
+
+    # label:
+    #     text: "Home"                    # 标签文本（被注释掉）
+    #     icon: icon.png                  # 标签图标路径（被注释掉）
+    #     iconHeight: 35                  # 图标高度（被注释掉）
+
+    # analytics:
+    #     google:
+    #         SiteVerificationTag: "XYZabc"  # Google 网站验证标签（被注释掉）
+
+    assets:
+        favicon: "img/logo.gif"         # 网站 favicon 图标路径
+        favicon16x16: "img/logo.gif"      # 16x16 尺寸 favicon 图标
+        favicon32x32: "img/logo.gif"      # 32x32 尺寸 favicon 图标
+        apple_touch_icon: "logo.gif"      # 苹果设备使用的触摸图标
+        safari_pinned_tab: "logo.gif"     # Safari 浏览器固定标签图标
+
+    # cover:
+    #     hidden: true                  # 隐藏封面图（仅对结构化数据隐藏，页面仍可能显示）（被注释掉）
+    #     hiddenInList: true            # 在列表页和首页隐藏封面图（被注释掉）
+    #     hiddenInSingle: true          # 在文章详情页隐藏封面图（被注释掉）
+
+    fuseOpts:                             # 搜索引擎配置项（Fuse.js 配置）
+        isCaseSensitive: false            # 搜索时是否区分大小写
+        shouldSort: true                  # 搜索结果是否排序
+        location: 0                       # 搜索匹配位置参数
+        distance: 1000                    # 搜索容错距离
+        threshold: 1                      # 搜索匹配阈值
+        minMatchCharLength: 0             # 最小匹配字符数
+        keys: ["title", "permalink", "summary"]  # 搜索时检索的字段
+
+    twikoo:
+      version: 1.4.11                     # 评论系统 Twikoo 的版本号
+
+taxonomies:
+    category: categories                  # 定义分类（category）的显示名称为 categories
+    tag: tags                             # 定义标签（tag）的显示名称为 tags
+    series: series                        # 定义系列（series）的显示名称为 series
+
+markup:
+    goldmark:
+        renderer:
+            unsafe: true                # 允许渲染 Markdown 中的未转义 HTML 代码（注意安全风险）
+    highlight:
+        # anchorLineNos: true           # 行号锚点（被注释掉）
+        codeFences: true                # 启用代码围栏功能，使代码块有更好的展示效果
+        guessSyntax: true               # 自动猜测代码块的语言
+        lineNos: true                   # 显示代码块行号
+        # noClasses: false              # 使用内联样式（被注释掉）
+        # style: monokai                # 使用 Monokai 代码高亮风格（被注释掉）
+        style: darcula                  # 使用 Darcula 代码高亮风格
+
+        # 以下为代码高亮配置说明：
+        # codeFences：代码围栏功能，这个功能一般都要设为 true 的，不然很难看，就是干巴巴的-代码文字，没有颜色。
+        # guessSyntax：猜测语法，这个功能建议设置为 true, 如果你没有设置要显示的语言则会自动匹配。
+        # hl_Lines：高亮的行号，一般这个不设置，因为每个代码块我们可能希望让高亮的地方不一样。
+        # lineNoStart：行号从编号几开始，一般从 1 开始。
+        # lineNos：是否显示行号，我比较喜欢显示，所以我设置的为 true.
+        # lineNumbersInTable：使用表来格式化行号和代码,而不是 标签。这个属性一般设置为 true.
+        # noClasses：使用 class 标签，而不是内嵌的内联样式
+
+privacy:
+    vimeo:
+        disabled: false                 # 不禁用 Vimeo 嵌入视频的隐私设置
+        simple: true                    # 启用 Vimeo 简单模式
+    twitter:
+        disabled: false                 # 不禁用 Twitter 隐私设置
+        enableDNT: true                 # 启用 Twitter 的“请勿追踪”（DNT）功能
+        simple: true                    # 启用 Twitter 简单模式
+    instagram:
+        disabled: false                 # 不禁用 Instagram 隐私设置
+        simple: true                    # 启用 Instagram 简单模式
+    youtube:
+        disabled: false                 # 不禁用 YouTube 隐私设置
+        privacyEnhanced: true           # 启用 YouTube 隐私增强模式
+
+services:
+    instagram:
+        disableInlineCSS: true          # 禁用 Instagram 的内联 CSS 样式
+    twitter:
+        disableInlineCSS: true          # 禁用 Twitter 的内联 CSS 样式
+
+        

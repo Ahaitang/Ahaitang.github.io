@@ -5,10 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>搜索 | AHaiTang&#39;s Blog</title>
+<title>🔍 搜索 | AHaiTang&#39;s Blog</title>
 <meta name="keywords" content="">
-<meta name="description" content="search">
-<meta name="author" content="Sonny Calcr">
+<meta name="description" content="Description for Search">
+<meta name="author" content="AHaiTang">
 <link rel="canonical" href="http://localhost:1313/search/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.3cb77bf0d621e645a8690a88ae26769e769710978a55828310dd363cf699644a.css" integrity="sha256-PLd78NYh5kWoaQqIriZ2nnaXEJeKVYKDEN02PPaZZEo=" rel="preload stylesheet" as="style"><link crossorigin="anonymous" rel="preload" as="fetch" href="../index.json">
 <script defer crossorigin="anonymous" src="/assets/js/search.d06cbc7a833635cc3f05adb8f1c1bfc1944ecc4cdcca6aca469160a2558e9cf7.js" integrity="sha256-0Gy8eoM2Ncw/Ba248cG/wZROzEzcymrKRpFgolWOnPc="></script>
@@ -25,6 +25,34 @@
         #theme-toggle,
         .top-link {
             display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
         }
 
     </style>
@@ -69,15 +97,15 @@
     }
 </style><meta property="og:url" content="http://localhost:1313/search/">
   <meta property="og:site_name" content="AHaiTang&#39;s Blog">
-  <meta property="og:title" content="搜索">
-  <meta property="og:description" content="search">
+  <meta property="og:title" content="🔍 搜索">
+  <meta property="og:description" content="Description for Search">
   <meta property="og:locale" content="zh">
   <meta property="og:type" content="article">
       <meta property="og:image" content="https://i.postimg.cc/7hwBy7VS/calcr.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://i.postimg.cc/7hwBy7VS/calcr.png">
-<meta name="twitter:title" content="搜索">
-<meta name="twitter:description" content="search">
+<meta name="twitter:title" content="🔍 搜索">
+<meta name="twitter:description" content="Description for Search">
 
 
 <script type="application/ld+json">
@@ -88,7 +116,7 @@
     {
       "@type": "ListItem",
       "position":  1 ,
-      "name": "搜索",
+      "name": "🔍 搜索",
       "item": "http://localhost:1313/search/"
     }
   ]
@@ -98,9 +126,9 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "搜索",
-  "name": "搜索",
-  "description": "search",
+  "headline": "🔍 搜索",
+  "name": "🔍 搜索",
+  "description": "Description for Search",
   "keywords": [
     
   ],
@@ -111,7 +139,7 @@
   "dateModified": "0001-01-01T00:00:00Z",
   "author":{
     "@type": "Person",
-    "name": "Sonny Calcr"
+    "name": "AHaiTang"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -129,10 +157,14 @@
 </script>
 </head>
 
-<body class="list dark" id="top">
+<body class="list" id="top">
 <script>
-    if (localStorage.getItem("pref-theme") === "light") {
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
         document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
     }
 
 </script>
@@ -166,33 +198,38 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/" title="首页">
-                    <span>首页</span>
+                <a href="http://localhost:1313/search/" title="🔍搜索 (Alt &#43; /)" accesskey=/>
+                    <span class="active">🔍搜索</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/archives/" title="归档">
-                    <span>归档</span>
+                <a href="http://localhost:1313/" title="🏠主页">
+                    <span>🏠主页</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/categories/" title="分类">
-                    <span>分类</span>
+                <a href="http://localhost:1313/posts" title="📚文章">
+                    <span>📚文章</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="标签">
-                    <span>标签</span>
+                <a href="http://localhost:1313/archives" title="⏱时间轴">
+                    <span>⏱时间轴</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/search/" title="搜索">
-                    <span class="active">搜索</span>
+                <a href="http://localhost:1313/categories" title="🧩分类">
+                    <span>🧩分类</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/about/" title="关于">
-                    <span>关于</span>
+                <a href="http://localhost:1313/tags" title="🔖标签">
+                    <span>🔖标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about" title="🙋🏻‍♂️关于">
+                    <span>🙋🏻‍♂️关于</span>
                 </a>
             </li>
         </ul>
@@ -201,12 +238,15 @@
 <main class="main">
 
 <header class="page-header">
-    <h1>搜索 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+    <h1>🔍 搜索 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
     </h1>
+    <div class="post-description">
+        Description for Search
+    </div>
     <div class="post-meta"></div>
 </header>
 
