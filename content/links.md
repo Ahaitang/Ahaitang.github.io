@@ -87,6 +87,10 @@ summary: links
     .friend-link:nth-child(4) {
         border-left-color: #fdcb6e;
     }
+
+    .friend-link:nth-child(5) {
+        border-left-color: #0984e3; 
+    }
     
     /* 添加页面标题样式 */
     .links-title {
@@ -132,9 +136,16 @@ summary: links
         </div>
         <img src="https://cdn.jsdelivr.net/gh/Pink-29/Pink-29.github.io/favicon.ico" alt="友链LOGO" loading="lazy">
     </a>
-    <a class="friend-link" href="https://space.bilibili.com/437520071?spm_id_from=333.1007.0.0" target="_blank">
+    <a class="friend-link" href="http://8.153.195.193/" target="_blank">
         <div class="info">
             <div class="name">BFS的博客</div>
+            <div class="description">分享一些技术文章(UP 的好伙伴)</div>
+        </div>
+        <img src="http://8.153.195.193:9000/bfs/202504021704187.png" alt="友链LOGO" loading="lazy">
+    </a>
+    <a class="friend-link" href="https://chouxiaozilwh.github.io/" target="_blank">
+        <div class="info">
+            <div class="name">ChouXiaoZilwh的博客</div>
             <div class="description">分享一些技术文章(UP 的好伙伴)</div>
         </div>
         <img src="http://8.153.195.193:9000/bfs/202504021704187.png" alt="友链LOGO" loading="lazy">

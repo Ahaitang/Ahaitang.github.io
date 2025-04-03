@@ -30,7 +30,7 @@ languages:
     weight: 1 # 权重
     profileMode:
         enabled: true                        # 启用个人简介模式
-        title: 独立之精神，自由之思想         # 个人简介的标题
+        title:          # 个人简介的标题
         subtitle: "👏🏼欢迎光临寒舍</br>👇联系方式"  # 个人简介的副标题，支持 HTML 标签换行
         imageUrl: "avatar.png"               # 个人简介中显示的头像或标志图片路径
         imageTitle:                          # 图片标题（此处留空）
