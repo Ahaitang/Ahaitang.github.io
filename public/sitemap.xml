@@ -77,7 +77,13 @@
     <loc>http://localhost:1313/posts/work/</loc>
     <lastmod>2025-04-03T09:38:09+08:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/posts/learn/</loc>
+    <lastmod>2025-04-03T09:38:09+08:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/bigdata%E9%9D%A2%E8%AF%95/</loc>
+    <lastmod>2025-04-03T09:38:09+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/learn/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%931/</loc>
     <lastmod>2025-04-03T09:38:09+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/work/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%931/</loc>
@@ -106,12 +112,10 @@
   </url><url>
     <loc>http://localhost:1313/archives/</loc>
   </url><url>
-    <loc>http://localhost:1313/posts/learn/</loc>
-  </url><url>
     <loc>http://localhost:1313/search/</loc>
   </url><url>
-    <loc>http://localhost:1313/links/</loc>
-  </url><url>
     <loc>http://localhost:1313/about/</loc>
+  </url><url>
+    <loc>http://localhost:1313/links/</loc>
   </url>
 </urlset>
