@@ -43,6 +43,8 @@ languages:
             url: posts/learn
           - name: 🏖 生活
             url: posts/life
+          - name: 💼 工作
+            url: posts/work
 
     taxonomies: # 分类系统
       category: categories
