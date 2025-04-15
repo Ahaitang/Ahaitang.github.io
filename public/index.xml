@@ -198,7 +198,6 @@
       <guid>http://localhost:1313/posts/work/%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%931/</guid>
       <description>&lt;p&gt;此处内容将会出现在摘要（summary）里&lt;/p&gt;
 &lt;!--\more--&gt; # 此处的“\”用于转义，否则无法正常显示，实际使用须删去。
-&lt;p&gt;文章转载至牛客网&lt;/p&gt;
 &lt;h2 id=&#34;hadoop面试题&#34;&gt;Hadoop面试题&lt;/h2&gt;
 &lt;h3 id=&#34;1-hdfs的写流程&#34;&gt;1. HDFS的写流程&lt;/h3&gt;
 &lt;blockquote&gt;
