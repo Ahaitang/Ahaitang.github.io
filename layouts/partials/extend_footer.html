@@ -1,0 +1,38 @@
+{{- /* Footer custom content area start */ -}}
+<!-- <div class="footer-custom">
+    <span>本站已运行</span>
+    <span id="runtime"></span>
+</div> -->
+
+<script>
+    function calculateRuntime() {
+        const start = new Date('2025-03-02'); // 设置你的网站开始运行的时间
+        const current = new Date();
+        const diff = current - start;
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('runtime').innerHTML = 
+            days + " 天 " + 
+            hours + " 时 " + 
+            minutes + " 分 " + 
+            seconds + " 秒";
+    }
+
+    // 初始调用
+    calculateRuntime();
+    // 每秒更新一次
+    setInterval(calculateRuntime, 1000);
+</script>
+
+<style>
+    .footer-custom {
+        text-align: center;
+        font-size: 0.875rem;
+        color: var(--content-fg);
+    }
+</style>
+{{- /* Footer custom content area end */ -}}

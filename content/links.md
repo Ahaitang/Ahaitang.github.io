@@ -43,7 +43,7 @@ summary: links
         font-weight: bold;
         font-size: 1.3em;
         margin-bottom: 8px;
-        color: #333;
+        color: rgb(0 0 0);
         transition: color 0.3s;
     }
 
@@ -97,7 +97,7 @@ summary: links
         text-align: center;
         margin: 30px 0;
         font-size: 2em;
-        color: #333;
+        color: var(--content);  /* 使用主题变量 */
         position: relative;
     }
     

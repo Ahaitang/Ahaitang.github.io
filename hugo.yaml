@@ -1,6 +1,6 @@
 baseURL: "https://ahaitang.github.io/" # 主站的 URL
 title: AHaiTang's Blog # 站点标题
-copyright: "[©2024 AHaiTang's Blog](https://ahaitang.github.io/)" # 网站的版权声明，通常显示在页脚
+# copyright: "[©2024 AHaiTang's Blog](https://ahaitang.github.io/)" # 网站的版权声明，通常显示在页脚
 theme: PaperMod # 主题
 languageCode: zh-cn # 语言
 paginate: 8 # 每页展示的文章数量
@@ -31,7 +31,7 @@ languages:
     profileMode:
         enabled: true                        # 启用个人简介模式
         title:          # 个人简介的标题
-        subtitle: "👏🏼欢迎光临寒舍</br>👇联系方式"  # 个人简介的副标题，支持 HTML 标签换行
+        subtitle: "👏🏼</br>👇联系方式"  # 个人简介的副标题，支持 HTML 标签换行
         imageUrl: "avatar.png"               # 个人简介中显示的头像或标志图片路径
         imageTitle:                          # 图片标题（此处留空）
         imageWidth: 150                      # 图片宽度
@@ -115,27 +115,8 @@ params:
   ShowToc: true                           # 展示文章详情页的目录
   TocOpen: true                           # 默认展开目录
   comments: true                          # 启用评论功能
-  images: ["https://i.postimg.cc/7hwBy7VS/calcr.png"] # 缺省的图片，比如，博客的封面
+ 
 
-
-  # # 首页的文章上方的一些信息
-  # homeInfoParams:
-  #   # 首页的 profile 内容
-  #   Title: "Hey Friend👋"
-  #   # 首页的 profile 内容
-  #   Content: >
-  #     Welcome to my Blog! 这里主要记录了我的视频创作的一些补充说明材料。博客因为是托管在 Github 上面，以及，图床使用的是国外免费的 Postimages，所以，挂上一个梯子可能会让访问更加顺畅。
-  #     <br>
-  #     也可以在其他地方访问我的文字材料，如下：
-  #     <br>
-  #     <div>
-  #     ● [SonnyCalcr's Notion](https://www.notion.so/luflyan/b5ee8643e563498b96c6b7ab0f27343b)
-  #     <br>
-  #     ● [博客园](https://www.cnblogs.com/fanlumaster)
-  #     <br>
-  #     ● My personal username of Discord is sonnycalcr, and, welcome to my [Discord Group/Server](https://discord.gg/HCebZMrfhE), maybe just to talk about some simple problems.
-  #     </div>
-  # 社交帐号的按钮
   socialIcons:
     - name: github
       title: Follow my Github
@@ -149,6 +130,10 @@ params:
     #     hidden: true                  # 隐藏封面图（仅对结构化数据隐藏，页面仍可能显示）（被注释掉）
     #     hiddenInList: true            # 在列表页和首页隐藏封面图（被注释掉）
     #     hiddenInSingle: true          # 在文章详情页隐藏封面图（被注释掉）
+
+  #网站统计
+  busuanzi:
+    enable: true
 
   # 搜索
   fuseOpts:

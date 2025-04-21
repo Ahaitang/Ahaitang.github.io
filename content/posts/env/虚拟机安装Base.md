@@ -1,20 +1,35 @@
-+++
-title = '虚拟机安装——CentOS'
-slug = 'Virtual machine installation'
-date = 2025-03-17T16:53:22+08:00
-weight=5
-author= ["Ahaitang"]
-categories = [
-    "BigData"
-]
-
-tags = [
-    "VMware",
-    "CentOS",
-    "虚拟机安装"
-]
-description = "Virtual machine installation"
-+++
+---
+title: '虚拟机安装——CentOS'
+slug: 'Virtual machine installation'
+date: 2025-03-17T16:53:22+08:00
+weight: 5
+author: ["Ahaitang"]
+categories:
+- BigData
+- 环境安装
+tags:
+- VMware
+- CentOS
+- 虚拟机安装
+# summary->在列表页展现的摘要内容，自动生成，内容默认前70个字符，可通过此参数自定义，一般无需专门设置
+summary: ""
+# description->需要自己编写的文章描述，是搜索引擎呈现在搜索结果链接下方的网页简介，建议设置
+description: "Virtual machine installation"
+weight: # 输入1可以顶置文章，用来给文章展示排序，不填就默认按时间排序
+slug: ""
+draft: false # 是否为草稿
+comments: true
+showToc: true # 显示目录
+TocOpen: true # 自动展开目录
+hidemeta: false # 是否隐藏文章的元信息，如发布日期、作者等
+disableShare: true # 底部不显示分享栏
+showbreadcrumbs: true #顶部显示当前路径
+cover:
+    image: ""
+    caption: ""
+    alt: ""
+    relative: false
+---
 
 # 虚拟机
 

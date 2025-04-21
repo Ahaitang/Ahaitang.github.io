@@ -60,53 +60,17 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
     rel="stylesheet">
-<script type="text/javascript" async
-    src="https://cdn.bootcss.com/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-        MathJax.Hub.Config({
-            tex2jax: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\[\[', '\]\]']],
-                processEscapes: true,
-                processEnvironments: true,
-                skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-                TeX: {
-                    equationNumbers: { autoNumber: "AMS" },
-                    extensions: ["AMSmath.js", "AMSsymbols.js"]
-                }
-            }
-        });
-
-        MathJax.Hub.Queue(function () {
-            
-            
-            
-            var all = MathJax.Hub.getAllJax(), i;
-            for (i = 0; i < all.length; i += 1) {
-                all[i].SourceElement().parentNode.className += ' has-jax';
-            }
-        });
-    </script>
-
-<style>
-    code.has-jax {
-        font: inherit;
-        font-size: 100%;
-        background: inherit;
-        border: inherit;
-        color: #515151;
-    }
-</style><meta property="og:url" content="http://localhost:1313/tags/">
+<meta property="og:url" content="http://localhost:1313/tags/">
   <meta property="og:site_name" content="AHaiTang&#39;s Blog">
   <meta property="og:title" content="Tags">
   <meta property="og:description" content="这是一个纯粹的博客......">
   <meta property="og:locale" content="zh">
   <meta property="og:type" content="website">
-      <meta property="og:image" content="https://i.postimg.cc/7hwBy7VS/calcr.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://i.postimg.cc/7hwBy7VS/calcr.png">
+<meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tags">
 <meta name="twitter:description" content="这是一个纯粹的博客......">
-
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <meta name="referrer" content="no-referrer-when-downgrade">
 </head>
 
 <body class="list" id="top">
@@ -215,6 +179,12 @@
         <a href="http://localhost:1313/tags/vmware/">VMware <sup><strong><sup>1</sup></strong></sup> </a>
     </li>
     <li>
+        <a href="http://localhost:1313/tags/%E6%A0%87%E7%AD%BE1/">标签1 <sup><strong><sup>7</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://localhost:1313/tags/%E6%A0%87%E7%AD%BE2/">标签2 <sup><strong><sup>7</sup></strong></sup> </a>
+    </li>
+    <li>
         <a href="http://localhost:1313/tags/%E5%8F%8D%E6%80%9D%E6%84%9F%E6%85%A8/">反思感慨 <sup><strong><sup>1</sup></strong></sup> </a>
     </li>
     <li>
@@ -239,19 +209,57 @@
     </main>
     
 <footer class="footer">
-        <span><a href="https://ahaitang.github.io/">©2024 AHaiTang&rsquo;s Blog</a></span> · 
+    <span>&copy; 2025 <a href="http://localhost:1313/">AHaiTang&#39;s Blog</a></span> · 
 
     <span>
         Powered by
         <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
         <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
     </span>
+    <div class="footer-custom">
+        <span>本站已运行</span>
+        <span id="runtime"></span>
+    </div>
+   
+    
 </footer>
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
+
+<script>
+    function calculateRuntime() {
+        const start = new Date('2025-03-02'); 
+        const current = new Date();
+        const diff = current - start;
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('runtime').innerHTML = 
+            days + " 天 " + 
+            hours + " 时 " + 
+            minutes + " 分 " + 
+            seconds + " 秒";
+    }
+
+    
+    calculateRuntime();
+    
+    setInterval(calculateRuntime, 1000);
+</script>
+
+<style>
+    .footer-custom {
+        text-align: center;
+        font-size: 0.875rem;
+        color: var(--content-fg);
+    }
+</style>
 
 <script>
     let menu = document.getElementById('menu')
@@ -306,7 +314,6 @@
         }
     })
 
-</script>
-</body>
+</script></body>
 
 </html>
