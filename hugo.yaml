@@ -31,7 +31,7 @@ languages:
     profileMode:
         enabled: true                        # 启用个人简介模式
         title:          # 个人简介的标题
-        subtitle: "👏🏼在分开那一刻 我们微笑着</br>慢慢忘记从前的快乐</br>👇联系方式"  # 个人简介的副标题，支持 HTML 标签换行
+        subtitle: "👏🏼在分开那一刻 我们微笑着</br>慢慢忘记从前的快乐"  # 个人简介的副标题，支持 HTML 标签换行
         imageUrl: "avatar.png"               # 个人简介中显示的头像或标志图片路径
         imageTitle:                          # 图片标题（此处留空）
         imageWidth: 150                      # 图片宽度
@@ -115,7 +115,7 @@ params:
   ShowToc: true                           # 展示文章详情页的目录
   TocOpen: true                           # 默认展开目录
   comments: true                          # 启用评论功能
- 
+
 
   socialIcons:
     - name: github
@@ -143,7 +143,7 @@ params:
       distance: 1000
       threshold: 0.4
       minMatchCharLength: 0
-      # limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+      limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
       keys: ["title", "permalink", "summary", "content"]
       includeMatches: true
 
