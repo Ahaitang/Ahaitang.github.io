@@ -115,20 +115,6 @@ summary: links
 <h2 class="links-title">我的朋友们</h2>
 
 <div class="friend-links">
-    <a class="friend-link" href="https://github.com/Ahaitang" target="_blank">
-        <div class="info">
-            <div class="name">GitHub</div>
-            <div class="description">GitHub is the world&#39;s largest software development platform.</div>
-        </div>
-        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" loading="lazy">
-    </a>
-    <a class="friend-link" href="https://space.bilibili.com/437520071?spm_id_from=333.1007.0.0" target="_blank">
-        <div class="info">
-            <div class="name">Bilibili</div>
-            <div class="description">Bilibili is a Chinese video website.</div>
-        </div>
-        <img src="https://www.bilibili.com/favicon.ico" alt="友链LOGO" loading="lazy">
-    </a>
     <a class="friend-link" href="https://pink-29.github.io/" target="_blank">
         <div class="info">
             <div class="name">Pink-29的博客</div>
@@ -149,5 +135,12 @@ summary: links
             <div class="description">分享一些技术文章(UP 的好伙伴)</div>
         </div>
         <img src="http://8.153.195.193:9000/bfs/202504021704187.png" alt="友链LOGO" loading="lazy">
+    </a>
+    <a class="friend-link" href="https://popoversail.github.io/" target="_blank">
+        <div class="info">
+            <div class="name">ChouXiaoZilwh的博客</div>
+            <div class="description">分享一些技术文章(UP 的好伙伴)</div>
+        </div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnfxGNwUz1HcvwlfbN7sqbeb6eMHh43XCRPA&s" alt="友链LOGO" loading="lazy">
     </a>
 </div>
