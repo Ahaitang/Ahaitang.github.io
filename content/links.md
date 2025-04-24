@@ -118,35 +118,35 @@ summary: links
     <a class="friend-link" href="https://pink-29.github.io/" target="_blank">
         <div class="info">
             <div class="name">Pink-29的博客</div>
-            <div class="description">分享一些技术文章(UP 的好伙伴)</div>
+            <div class="description">分享一些技术文章</div>
         </div>
         <img src="https://cdn.jsdelivr.net/gh/Pink-29/Pink-29.github.io/favicon.ico" alt="友链LOGO" loading="lazy">
     </a>
     <a class="friend-link" href="http://8.153.195.193/" target="_blank">
         <div class="info">
             <div class="name">BFS的博客</div>
-            <div class="description">分享一些技术文章(UP 的好伙伴)</div>
+            <div class="description">分享一些技术文章</div>
         </div>
         <img src="http://8.153.195.193:9000/bfs/202504021704187.png" alt="友链LOGO" loading="lazy">
     </a>
     <a class="friend-link" href="https://chouxiaozilwh.github.io/" target="_blank">
         <div class="info">
             <div class="name">ChouXiaoZilwh的博客</div>
-            <div class="description">分享一些技术文章(UP 的好伙伴)</div>
+            <div class="description">分享一些技术文章</div>
         </div>
         <img src="http://8.153.195.193:9000/bfs/202504021704187.png" alt="友链LOGO" loading="lazy">
     </a>
     <a class="friend-link" href="https://popoversail.github.io/" target="_blank">
         <div class="info">
             <div class="name">ChouXiaoZilwh的博客</div>
-            <div class="description">分享一些技术文章(UP 的好伙伴)</div>
+            <div class="description">分享一些技术文章</div>
         </div>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnfxGNwUz1HcvwlfbN7sqbeb6eMHh43XCRPA&s" alt="友链LOGO" loading="lazy">
     </a>
     <a class="friend-link" href="https://xfwmhxx.github.io/My-Blog/" target="_blank">
         <div class="info">
             <div class="name">逐梦者's 部落格</div>
-            <div class="description">分享一些技术文章(UP 的好伙伴)</div>
+            <div class="description">分享一些技术文章</div>
         </div>
         <img src="https://xfwmhxx.github.io/Blog-pic-bed/img/ee432f6ef2ee2c500f79c8825d666123.png" alt="友链LOGO" loading="lazy">
     </a>
