@@ -45,6 +45,8 @@ languages:
             url: posts/life
           - name: 💼 工作
             url: posts/work
+          - name: "🤖 算法"
+            url: posts/algorithm
 
     taxonomies: # 分类系统
       category: categories
