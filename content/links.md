@@ -110,6 +110,26 @@ summary: links
         margin: 15px auto;
         border-radius: 2px;
     }
+    .join-info {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        padding: 25px;
+        border-radius: 15px;
+        margin-top: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .join-info h3 {
+        color: var(--primary);
+        margin-bottom: 15px;
+    }
+
+    .join-info pre {
+        background: rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        border-radius: 10px;
+        overflow-x: auto;
+    }
 </style>
 
 <h2 class="links-title">我的朋友们</h2>
@@ -150,4 +170,14 @@ summary: links
         </div>
         <img src="https://xfwmhxx.github.io/Blog-pic-bed/img/ee432f6ef2ee2c500f79c8825d666123.png" alt="友链LOGO" loading="lazy">
     </a>
+</div>
+<h2 class="links-title">加入我们</h2>
+<div class="join-info">
+    <strong>🎉 如何加入我们</strong>
+    <p>如果你想加入我们的友链，请按照以下格式在评论区留言：</p>
+    <pre>
+名称：你的网站名称
+链接：https://your-site.com
+描述：一句话描述
+头像：https://your-avatar-url.com</pre>
 </div>

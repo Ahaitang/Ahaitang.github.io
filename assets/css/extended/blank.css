@@ -84,3 +84,34 @@ img:active {
     transform: scale(1.35,1.35)
 }
 
+.entry-cover {
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post-entry {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.entry-cover-list {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 50%;
+    margin-bottom: unset;
+
+    max-height: 150px;
+    display: grid;
+    align-content: center;
+}
+
+.post-info {
+    display: inline-block;
+    overflow: hidden;
+    width: 100%;
+    padding-right: 10px;
+}
