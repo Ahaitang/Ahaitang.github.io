@@ -3,7 +3,8 @@ title: AHaiTang's Blog # 站点标题
 # copyright: "[©2024 AHaiTang's Blog](https://ahaitang.github.io/)" # 网站的版权声明，通常显示在页脚
 theme: PaperMod # 主题
 languageCode: zh-cn # 语言
-paginate: 8 # 每页展示的文章数量
+pagination:
+  pagerSize: 8 # 每页展示的文章数量
 
 enableInlineShortcodes: true # shortcode，类似于模板变量，可以在写 markdown 的时候便捷地插入，官方文档中有一个视频讲的很通俗
 hasCJKLanguage: true # 是否有 CJK 的字符
@@ -26,27 +27,28 @@ permalinks:
 
 languages:
   zh:
-    languageName: "中文" # 展示的语言名
-    weight: 1 # 权重
-    profileMode:
-        enabled: true                        # 启用个人简介模式
-        title:          # 个人简介的标题
-        subtitle: "👏🏼在分开那一刻 我们微笑着</br>慢慢忘记从前的快乐"  # 个人简介的副标题，支持 HTML 标签换行
-        imageUrl: "avatar.png"               # 个人简介中显示的头像或标志图片路径
-        imageTitle:                          # 图片标题（此处留空）
-        imageWidth: 150                      # 图片宽度
-        imageHeight: 150                     # 图片高度
-        buttons:                             # 个人简介下方的按钮列表
-          - name: 👨🏻‍💻 环境                # 按钮名称
-            url: posts/env                  # 按钮链接地址
-          - name: 📕 学习
-            url: posts/learn
-          - name: 🏖 生活
-            url: posts/life
-          - name: 💼 工作
-            url: posts/work
-          - name: "🤖 算法"
-            url: posts/algorithm
+    languageName: "中文"
+    weight: 1
+    params:
+        profileMode:
+            enabled: true
+            title:
+            subtitle: "👏🏼在分开那一刻 我们微笑着</br>慢慢忘记从前的快乐"
+            imageUrl: "avatar.png"
+            imageTitle:
+            imageWidth: 150
+            imageHeight: 150
+            buttons:
+                - name: 👨🏻‍💻 环境
+                  url: posts/env
+                - name: 📕 学习
+                  url: posts/learn
+                - name: 🏖 生活
+                  url: posts/life
+                - name: 💼 工作
+                  url: posts/work
+                - name: "🤖 算法"
+                  url: posts/algorithm
 
     taxonomies: # 分类系统
       category: categories
@@ -206,23 +208,9 @@ markup:
         # lineNumbersInTable：使用表来格式化行号和代码,而不是 标签。这个属性一般设置为 true.
         # noClasses：使用 class 标签，而不是内嵌的内联样式
 
-privacy:
-    vimeo:
-        disabled: false                 # 不禁用 Vimeo 嵌入视频的隐私设置
-        simple: true                    # 启用 Vimeo 简单模式
-    twitter:
-        disabled: false                 # 不禁用 Twitter 隐私设置
-        enableDNT: true                 # 启用 Twitter 的“请勿追踪”（DNT）功能
-        simple: true                    # 启用 Twitter 简单模式
-    instagram:
-        disabled: false                 # 不禁用 Instagram 隐私设置
-        simple: true                    # 启用 Instagram 简单模式
-    youtube:
-        disabled: false                 # 不禁用 YouTube 隐私设置
-        privacyEnhanced: true           # 启用 YouTube 隐私增强模式
+
+
 
 services:
-    instagram:
-        disableInlineCSS: true          # 禁用 Instagram 的内联 CSS 样式
-    twitter:
-        disableInlineCSS: true          # 禁用 Twitter 的内联 CSS 样式
+    x:
+        disableInlineCSS: true
