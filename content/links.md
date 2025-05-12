@@ -137,28 +137,28 @@ summary: links
 <div class="friend-links">
     <a class="friend-link" href="https://pink-29.github.io/" target="_blank">
         <div class="info">
-            <div class="name">Pink-29的博客</div>
+            <div class="name">Pink-29</div>
             <div class="description">分享一些技术文章</div>
         </div>
         <img src="https://cdn.jsdelivr.net/gh/Pink-29/Pink-29.github.io/favicon.ico" alt="友链LOGO" loading="lazy">
     </a>
     <a class="friend-link" href="https://sheng666.top/" target="_blank">
         <div class="info">
-            <div class="name">BFS的博客</div>
+            <div class="name">BFS</div>
             <div class="description">分享一些技术文章</div>
         </div>
         <img src="https://sheng666.top/imgs/202504021704187.png" alt="友链LOGO" loading="lazy">
     </a>
     <a class="friend-link" href="https://chouxiaozilwh.github.io/" target="_blank">
         <div class="info">
-            <div class="name">ChouXiaoZilwh的博客</div>
+            <div class="name">ChouXiaoZilwh</div>
             <div class="description">分享一些技术文章</div>
         </div>
         <img src="https://sheng666.top/imgs/%E8%87%AD%E5%B0%8F%E5%AD%90lwh.jpg" alt="友链LOGO" loading="lazy">
     </a>
     <a class="friend-link" href="https://popoversail.github.io/" target="_blank">
         <div class="info">
-            <div class="name">popoversail 的博客</div>
+            <div class="name">popoversail </div>
             <div class="description">分享一些技术文章</div>
         </div>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnfxGNwUz1HcvwlfbN7sqbeb6eMHh43XCRPA&s" alt="友链LOGO" loading="lazy">
