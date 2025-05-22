@@ -77,9 +77,6 @@
     <loc>http://localhost:1313/posts/life/%E9%97%B2%E6%9A%87%E5%B0%8F%E8%AE%B03/</loc>
     <lastmod>2025-04-08T14:20:14+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E8%87%AA%E6%88%91%E6%84%9F%E6%83%B3/</loc>
-    <lastmod>2025-04-08T14:20:14+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/%E5%90%90%E6%A7%BD/</loc>
     <lastmod>2025-04-03T16:03:17+08:00</lastmod>
   </url><url>
@@ -175,6 +172,9 @@
   </url><url>
     <loc>http://localhost:1313/posts/env/%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85base/</loc>
     <lastmod>2025-03-17T16:53:22+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/gallery/</loc>
+    <lastmod>2024-01-08T14:20:14+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/archives/</loc>
   </url><url>

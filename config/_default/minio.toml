@@ -1,0 +1,6 @@
+[minio]
+endpoint = "your-minio-endpoint"
+accessKey = "your-access-key"
+secretKey = "your-secret-key"
+bucketName = "your-bucket-name"
+useSSL = true

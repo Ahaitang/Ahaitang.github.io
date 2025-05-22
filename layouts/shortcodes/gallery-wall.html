@@ -1,0 +1,99 @@
+{{ if not (eq .Page.Params.password nil) }}
+{{ if not (.Page.Scratch.Get "password_verified") }}
+<div class="password-protection">
+    <form id="password-form" onsubmit="return verifyPassword(event)">
+        <input type="password" id="password-input" placeholder="请输入访问密码" required>
+        <button type="submit">确认</button>
+    </form>
+</div>
+
+<div id="gallery-content" style="display: none;">
+    <div class="gallery-grid" id="minio-gallery-grid"></div>
+</div>
+
+<!-- 图片预览模态框 -->
+<div id="gallery-modal" class="gallery-modal">
+    <img id="modal-image" src="" alt="预览图片">
+</div>
+
+<!-- 引入CryptoJS库用于签名计算 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<!-- 引入MinIO客户端 -->
+<script src="/js/minio-client.js"></script>
+
+<script>
+// MinIO配置
+const minioConfig = {
+    endpoint: '{{ site.Params.minio.endpoint }}',
+    accessKey: '{{ site.Params.minio.accessKey }}',
+    secretKey: '{{ site.Params.minio.secretKey }}',
+    bucketName: '{{ site.Params.minio.bucketName }}',
+    useSSL: '{{ site.Params.minio.useSSL }}' === 'true'
+};
+
+const gallery = new MinioGallery(minioConfig);
+
+function verifyPassword(event) {
+    event.preventDefault();
+    const input = document.getElementById('password-input');
+    const correctPassword = '{{ .Page.Params.password }}';
+    
+    if (input.value === correctPassword) {
+        document.querySelector('.password-protection').style.display = 'none';
+        document.getElementById('gallery-content').style.display = 'block';
+        initGallery();
+    } else {
+        alert('密码错误，请重试');
+        input.value = '';
+    }
+    return false;
+}
+
+async function initGallery() {
+    const galleryGrid = document.getElementById('minio-gallery-grid');
+    const modal = document.getElementById('gallery-modal');
+    const modalImg = document.getElementById('modal-image');
+
+    try {
+        const images = await gallery.listImages();
+        images.forEach(image => {
+            const div = document.createElement('div');
+            div.className = 'gallery-item';
+            
+            const img = document.createElement('img');
+            img.src = image.url;
+            img.alt = image.name;
+            img.loading = 'lazy';
+            img.style.cursor = 'zoom-in';
+            
+            img.onclick = function() {
+                modal.classList.add('active');
+                modalImg.src = this.src;
+            };
+            
+            div.appendChild(img);
+            galleryGrid.appendChild(div);
+        });
+
+        modal.onclick = function() {
+            modal.classList.remove('active');
+        };
+    } catch (error) {
+        console.error('加载图片失败:', error);
+        galleryGrid.innerHTML = '<p class="error-message">加载图片失败，请稍后重试</p>';
+    }
+}
+
+// 如果页面没有密码保护，直接初始化图库
+if (!document.querySelector('.password-protection')) {
+    document.addEventListener('DOMContentLoaded', initGallery);
+}
+</script>
+{{ else }}
+<!-- 密码已验证，直接显示内容 -->
+<div class="gallery-grid" id="minio-gallery-grid"></div>
+{{ end }}
+{{ else }}
+<!-- 无密码保护，直接显示内容 -->
+<div class="gallery-grid" id="minio-gallery-grid"></div>
+{{ end }}
