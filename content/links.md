@@ -4,6 +4,56 @@ layout: links
 summary: links
 ---
 
+<h2 class="links-title">我的朋友们</h2>
+
+<div class="friend-links">
+    <a class="friend-link" href="https://pink-29.github.io/" target="_blank">
+        <div class="info">
+            <div class="name">Pink-29</div>
+            <div class="description">分享一些技术文章</div>
+        </div>
+        <img src="https://cdn.jsdelivr.net/gh/Pink-29/Pink-29.github.io/favicon.ico" alt="友链LOGO" loading="lazy">
+    </a>
+    <a class="friend-link" href="https://sheng666.top/" target="_blank">
+        <div class="info">
+            <div class="name">BFS</div>
+            <div class="description">分享一些技术文章</div>
+        </div>
+        <img src="https://sheng666.top/imgs/202504021704187.png" alt="友链LOGO" loading="lazy">
+    </a>
+    <a class="friend-link" href="https://chouxiaozilwh.github.io/" target="_blank">
+        <div class="info">
+            <div class="name">ChouXiaoZilwh</div>
+            <div class="description">分享一些技术文章</div>
+        </div>
+        <img src="https://sheng666.top/imgs/%E8%87%AD%E5%B0%8F%E5%AD%90lwh.jpg" alt="友链LOGO" loading="lazy">
+    </a>
+    <a class="friend-link" href="https://popoversail.github.io/" target="_blank">
+        <div class="info">
+            <div class="name">popoversail </div>
+            <div class="description">分享一些技术文章</div>
+        </div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnfxGNwUz1HcvwlfbN7sqbeb6eMHh43XCRPA&s" alt="友链LOGO" loading="lazy">
+    </a>
+    <a class="friend-link" href="https://xfwmhxx.github.io/My-Blog/" target="_blank">
+        <div class="info">
+            <div class="name">逐梦者's 部落格</div>
+            <div class="description">分享一些技术文章</div>
+        </div>
+        <img src="https://xfwmhxx.github.io/Blog-pic-bed/img/ee432f6ef2ee2c500f79c8825d666123.png" alt="友链LOGO" loading="lazy">
+    </a>
+</div>
+<h2 class="links-title">加入我们</h2>
+<div class="join-info">
+    <strong>🎉 如何加入我们</strong>
+    <p>如果你想加入我们的友链，请按照以下格式在评论区留言：</p>
+    <pre>
+名称：你的网站名称
+链接：https://your-site.com
+描述：一句话描述
+头像：https://your-avatar-url.com</pre>
+</div>
+
 <style>
     .friend-links {
         display: flex;
@@ -132,52 +182,3 @@ summary: links
     }
 </style>
 
-<h2 class="links-title">我的朋友们</h2>
-
-<div class="friend-links">
-    <a class="friend-link" href="https://pink-29.github.io/" target="_blank">
-        <div class="info">
-            <div class="name">Pink-29</div>
-            <div class="description">分享一些技术文章</div>
-        </div>
-        <img src="https://cdn.jsdelivr.net/gh/Pink-29/Pink-29.github.io/favicon.ico" alt="友链LOGO" loading="lazy">
-    </a>
-    <a class="friend-link" href="https://sheng666.top/" target="_blank">
-        <div class="info">
-            <div class="name">BFS</div>
-            <div class="description">分享一些技术文章</div>
-        </div>
-        <img src="https://sheng666.top/imgs/202504021704187.png" alt="友链LOGO" loading="lazy">
-    </a>
-    <a class="friend-link" href="https://chouxiaozilwh.github.io/" target="_blank">
-        <div class="info">
-            <div class="name">ChouXiaoZilwh</div>
-            <div class="description">分享一些技术文章</div>
-        </div>
-        <img src="https://sheng666.top/imgs/%E8%87%AD%E5%B0%8F%E5%AD%90lwh.jpg" alt="友链LOGO" loading="lazy">
-    </a>
-    <a class="friend-link" href="https://popoversail.github.io/" target="_blank">
-        <div class="info">
-            <div class="name">popoversail </div>
-            <div class="description">分享一些技术文章</div>
-        </div>
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnfxGNwUz1HcvwlfbN7sqbeb6eMHh43XCRPA&s" alt="友链LOGO" loading="lazy">
-    </a>
-    <a class="friend-link" href="https://xfwmhxx.github.io/My-Blog/" target="_blank">
-        <div class="info">
-            <div class="name">逐梦者's 部落格</div>
-            <div class="description">分享一些技术文章</div>
-        </div>
-        <img src="https://xfwmhxx.github.io/Blog-pic-bed/img/ee432f6ef2ee2c500f79c8825d666123.png" alt="友链LOGO" loading="lazy">
-    </a>
-</div>
-<h2 class="links-title">加入我们</h2>
-<div class="join-info">
-    <strong>🎉 如何加入我们</strong>
-    <p>如果你想加入我们的友链，请按照以下格式在评论区留言：</p>
-    <pre>
-名称：你的网站名称
-链接：https://your-site.com
-描述：一句话描述
-头像：https://your-avatar-url.com</pre>
-</div>

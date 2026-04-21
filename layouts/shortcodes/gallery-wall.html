@@ -19,7 +19,7 @@
 <!-- 引入CryptoJS库用于签名计算 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 <!-- 引入MinIO客户端 -->
-<script src="/js/minio-client.js"></script>
+<script src="/js/minio-client.js?v=20260421"></script>
 
 <script>
 // MinIO配置
@@ -28,10 +28,31 @@ const minioConfig = {
     accessKey: '{{ site.Params.minio.accessKey }}',
     secretKey: '{{ site.Params.minio.secretKey }}',
     bucketName: '{{ site.Params.minio.bucketName }}',
-    useSSL: '{{ site.Params.minio.useSSL }}' === 'true'
+    useSSL: false
 };
 
 const gallery = new MinioGallery(minioConfig);
+
+// 添加连接测试功能
+async function testMinioConnection() {
+    const statusElement = document.createElement('div');
+    statusElement.className = 'connection-status';
+    statusElement.innerHTML = '正在测试MinIO连接...';
+    document.getElementById('gallery-content').prepend(statusElement);
+    
+    try {
+        await gallery.testConnection();
+        statusElement.innerHTML = '✅ MinIO连接成功';
+        statusElement.style.color = 'green';
+        setTimeout(() => statusElement.remove(), 3000);
+        return true;
+    } catch (error) {
+        statusElement.innerHTML = `❌ MinIO连接失败: ${error.message}`;
+        statusElement.style.color = 'red';
+        console.error('MinIO连接测试失败:', error);
+        return false;
+    }
+}
 
 function verifyPassword(event) {
     event.preventDefault();
@@ -39,6 +60,7 @@ function verifyPassword(event) {
     const correctPassword = '{{ .Page.Params.password }}';
     
     if (input.value === correctPassword) {
+        localStorage.setItem('gallery_auth_{{ .Page.File.Path }}', '1');
         document.querySelector('.password-protection').style.display = 'none';
         document.getElementById('gallery-content').style.display = 'block';
         initGallery();
@@ -55,39 +77,120 @@ async function initGallery() {
     const modalImg = document.getElementById('modal-image');
 
     try {
-        const images = await gallery.listImages();
-        images.forEach(image => {
+        console.log('MinIO配置:', JSON.stringify({
+            endpoint: minioConfig.endpoint,
+            bucketName: minioConfig.bucketName,
+            useSSL: minioConfig.useSSL
+        }));
+        
+        // 先测试MinIO连接
+        const connectionSuccess = await testMinioConnection();
+        
+        if (connectionSuccess) {
+            // 连接成功，尝试获取图片
+            const images = await gallery.listImages();
+            console.log('获取到的图片列表:', images);
+            
+            if (images && images.length > 0) {
+                images.forEach(image => {
+                    const div = document.createElement('div');
+                    div.className = 'gallery-item';
+
+                    const img = document.createElement('img');
+                    img.src = image.url;
+                    img.alt = image.name;
+                    img.loading = 'lazy';
+                    img.style.cursor = 'zoom-in';
+
+                    // 图片加载完成后显示
+                    img.onload = function() {
+                        this.classList.add('loaded');
+                    };
+                    
+                    // 添加图片加载错误处理
+                    img.onerror = function() {
+                        console.error('图片加载失败:', image.url);
+                        this.src = '/images/error-image.png'; // 可以替换为错误占位图
+                        this.alt = '图片加载失败';
+                    };
+
+                    img.onclick = function () {
+                        modal.classList.add('active');
+                        modalImg.src = this.src;
+                    };
+
+                    div.appendChild(img);
+                    galleryGrid.appendChild(div);
+                });
+
+                modal.onclick = () => modal.classList.remove('active');
+            } else {
+                galleryGrid.innerHTML = '<p class="error-message">没有找到图片</p>';
+                console.warn('MinIO返回的图片列表为空');
+            }
+        } else {
+            // 连接失败，显示本地回退图片
+            showLocalFallbackImages(galleryGrid, modal, modalImg);
+        }
+    } catch (error) {
+        console.error('加载图片时发生错误:', error);
+        galleryGrid.innerHTML = `<p class="error-message">加载图片失败: ${error.message}</p>`;
+        // 尝试显示本地回退图片
+        showLocalFallbackImages(galleryGrid, modal, modalImg);
+    }
+}
+
+// 显示本地回退图片
+function showLocalFallbackImages(galleryGrid, modal, modalImg) {
+    galleryGrid.innerHTML = '<p class="info-message">MinIO服务器连接失败，显示本地图片</p>';
+    
+    // 这里可以添加一些本地图片作为回退
+    const localImages = [
+        { url: '/images/fallback1.jpg', name: '本地图片1' },
+        { url: '/images/fallback2.jpg', name: '本地图片2' },
+        { url: '/images/fallback3.jpg', name: '本地图片3' }
+    ];
+    
+    // 检查是否有本地图片可用
+    if (localImages && localImages.length > 0) {
+        localImages.forEach(image => {
             const div = document.createElement('div');
             div.className = 'gallery-item';
-            
+
             const img = document.createElement('img');
             img.src = image.url;
             img.alt = image.name;
             img.loading = 'lazy';
             img.style.cursor = 'zoom-in';
             
-            img.onclick = function() {
+            img.onerror = function() {
+                this.style.display = 'none';
+                div.style.display = 'none';
+            };
+
+            img.onclick = function () {
                 modal.classList.add('active');
                 modalImg.src = this.src;
             };
-            
+
             div.appendChild(img);
             galleryGrid.appendChild(div);
         });
 
-        modal.onclick = function() {
-            modal.classList.remove('active');
-        };
-    } catch (error) {
-        console.error('加载图片失败:', error);
-        galleryGrid.innerHTML = '<p class="error-message">加载图片失败，请稍后重试</p>';
+        modal.onclick = () => modal.classList.remove('active');
     }
 }
 
+
 // 如果页面没有密码保护，直接初始化图库
-if (!document.querySelector('.password-protection')) {
-    document.addEventListener('DOMContentLoaded', initGallery);
-}
+document.addEventListener('DOMContentLoaded', () => {
+    const verified = localStorage.getItem('gallery_auth_{{ .Page.File.Path }}');
+    if (verified === '1') {
+        document.querySelector('.password-protection')?.remove();
+        document.getElementById('gallery-content').style.display = 'block';
+        initGallery();
+    }
+});
 </script>
 {{ else }}
 <!-- 密码已验证，直接显示内容 -->

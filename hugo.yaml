@@ -133,6 +133,12 @@ params:
     - name: mail
       title: 联系我的邮箱
       url: "https://mail.163.com/js6/main.jsp?sid=CABTqZhhhhhCChhhhh&df=mail163_letter#compose&to=zikangj@ahtcm.etu.cn.com"
+    - name: 小红书
+      title: 关注我的小红书
+      url: URL_ADDRESS.xiaohongshu.com/user/profile/644d58e8000000000101784e?appUid=644d58e8000000000101784e&appTime=1690006601
+    - name: 知乎
+      title: 关注我的知乎
+      url: URL_ADDRESS.zhihu.com/people/ahaitang
   
 
   # 封面图

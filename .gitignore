@@ -27,3 +27,7 @@ _testmain.go
 .hugo_build.lock
 resources/_gen/
 *drak.yaml
+
+# MinIO敏感配置（包含密钥，不推送）
+config/_default/params.toml
+config/_default/minio.toml
