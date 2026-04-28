@@ -13,57 +13,52 @@
 .post-categories {
   margin: 10px 0;
   display: flex;
+  align-items: center;
   gap: 8px;
 }
 
-.post-categories a {
+.post-meta-label {
+  font-size: 0.9em;
+  color: var(--secondary, #666);
+}
+
+.post-category-tag {
   background: var(--primary, #2196f3);
   color: #fff;
   padding: 4px 12px;
   border-radius: 4px;
   font-size: 0.85em;
-  text-decoration: none;
-}
-
-.post-categories a:hover {
-  opacity: 0.85;
 }
 
 .post-tags-header {
   margin: 10px 0;
   display: flex;
+  align-items: center;
   gap: 6px;
   flex-wrap: wrap;
 }
 
-.post-tags-header a {
+.post-tag-item {
   background: var(--border, #e0e0e0);
   color: var(--secondary, #666);
   padding: 3px 10px;
   border-radius: 4px;
   font-size: 0.8em;
-  text-decoration: none;
-}
-
-.post-tags-header a:hover {
-  background: var(--primary, #2196f3);
-  color: #fff;
 }
 
 @media (prefers-color-scheme: dark) {
-  .post-categories a {
-    background: #4fc3f7;
-    color: #000;
-  }
-
-  .post-tags-header a {
-    background: #333;
+  .post-meta-label {
     color: #aaa;
   }
 
-  .post-tags-header a:hover {
+  .post-category-tag {
     background: #4fc3f7;
     color: #000;
+  }
+
+  .post-tag-item {
+    background: #333;
+    color: #aaa;
   }
 }
 </style>
