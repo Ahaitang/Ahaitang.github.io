@@ -33,8 +33,20 @@
       {{- end }}
     </div>
     {{- end }}
-    <span class="split"> · </span>
-
+    {{- if .Params.categories }}
+    <div class="post-categories">
+      {{- range .Params.categories }}
+      <a href="{{ "/categories/" | relURL }}{{ . | urlize }}/">{{ . }}</a>
+      {{- end }}
+    </div>
+    {{- end }}
+    {{- if .Params.tags }}
+    <div class="post-tags-header">
+      {{- range .Params.tags }}
+      <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/">{{ . }}</a>
+      {{- end }}
+    </div>
+    {{- end }}
   </header>
   {{- $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default false }}
   {{- partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) }}
@@ -73,3 +85,62 @@
 
 
 {{- end }}{{/* end main */}}
+
+<style>
+.post-categories {
+  margin: 10px 0;
+  display: flex;
+  gap: 8px;
+}
+
+.post-categories a {
+  background: var(--primary, #2196f3);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  text-decoration: none;
+}
+
+.post-categories a:hover {
+  opacity: 0.85;
+}
+
+.post-tags-header {
+  margin: 10px 0;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.post-tags-header a {
+  background: var(--border, #e0e0e0);
+  color: var(--secondary, #666);
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+.post-tags-header a:hover {
+  background: var(--primary, #2196f3);
+  color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  .post-categories a {
+    background: #4fc3f7;
+    color: #000;
+  }
+
+  .post-tags-header a {
+    background: #333;
+    color: #aaa;
+  }
+
+  .post-tags-header a:hover {
+    background: #4fc3f7;
+    color: #000;
+  }
+}
+</style>
