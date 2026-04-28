@@ -59,7 +59,7 @@ jobs:
           accessKey = "${{ secrets.MINIO_ACCESS_KEY }}"
           secretKey = "${{ secrets.MINIO_SECRET_KEY }}"
           bucketName = "${{ secrets.MINIO_BUCKET }}"
-          useSSL = false
+          useSSL = true
           EOF
       - name: Build with Hugo
         env:
