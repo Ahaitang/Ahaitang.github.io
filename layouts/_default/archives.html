@@ -58,17 +58,12 @@
               {{- if .Draft }}
               <span class="draft-badge">草稿</span>
               {{- end }}
-            </h3>
-            {{- if .Summary }}
-            <p class="timeline-card-summary">{{ .Summary | truncate 100 }}</p>
-            {{- end }}
-            <div class="timeline-card-meta">
               {{- with .Params.categories }}
               <span class="timeline-card-category">
                 {{- range first 1 . }}{{ . }}{{- end }}
               </span>
               {{- end }}
-            </div>
+            </h3>
           </div>
         </a>
       </div>
@@ -169,11 +164,19 @@
 .timeline-card-title {
   font-size: 1.1em;
   font-weight: 600;
-  margin: 0 0 8px 0;
+  margin: 0;
   color: var(--primary, #333);
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.timeline-card-category {
+  font-size: 0.75em;
+  background: var(--primary, #2196f3);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 4px;
 }
 
 .draft-badge {
@@ -182,22 +185,6 @@
   color: #fff;
   padding: 2px 6px;
   border-radius: 4px;
-}
-
-.timeline-card-summary {
-  font-size: 0.9em;
-  color: var(--secondary, #666);
-  margin: 0;
-  line-height: 1.5;
-}
-
-.timeline-card-meta {
-  margin-top: 10px;
-  font-size: 0.85em;
-}
-
-.timeline-card-category {
-  color: var(--primary, #2196f3);
 }
 
 /* 深色模式适配 */
