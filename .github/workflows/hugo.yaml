@@ -50,6 +50,17 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: Create MinIO config
+        run: |
+          mkdir -p config/_default
+          cat > config/_default/params.toml << EOF
+          [minio]
+          endpoint = "${{ secrets.MINIO_ENDPOINT }}"
+          accessKey = "${{ secrets.MINIO_ACCESS_KEY }}"
+          secretKey = "${{ secrets.MINIO_SECRET_KEY }}"
+          bucketName = "${{ secrets.MINIO_BUCKET }}"
+          useSSL = false
+          EOF
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
