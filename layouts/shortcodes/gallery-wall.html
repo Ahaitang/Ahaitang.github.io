@@ -28,7 +28,7 @@ const minioConfig = {
     accessKey: '{{ site.Params.minio.accessKey }}',
     secretKey: '{{ site.Params.minio.secretKey }}',
     bucketName: '{{ site.Params.minio.bucketName }}',
-    useSSL: false
+    useSSL: {{ site.Params.minio.useSSL | default true }}
 };
 
 const gallery = new MinioGallery(minioConfig);
