@@ -8,4 +8,64 @@
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
     rel="stylesheet">
 <!-- {{ partial "mathjax.html" . }} -->
+
+<style>
+.post-categories {
+  margin: 10px 0;
+  display: flex;
+  gap: 8px;
+}
+
+.post-categories a {
+  background: var(--primary, #2196f3);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  text-decoration: none;
+}
+
+.post-categories a:hover {
+  opacity: 0.85;
+}
+
+.post-tags-header {
+  margin: 10px 0;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.post-tags-header a {
+  background: var(--border, #e0e0e0);
+  color: var(--secondary, #666);
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+.post-tags-header a:hover {
+  background: var(--primary, #2196f3);
+  color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  .post-categories a {
+    background: #4fc3f7;
+    color: #000;
+  }
+
+  .post-tags-header a {
+    background: #333;
+    color: #aaa;
+  }
+
+  .post-tags-header a:hover {
+    background: #4fc3f7;
+    color: #000;
+  }
+}
+</style>
+
 {{- /* Head custom content area end */ -}}
