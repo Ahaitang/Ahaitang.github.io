@@ -1,0 +1,248 @@
+{{- define "main" }}
+
+<header class="page-header">
+  <h1>
+    {{ .Title }}
+    {{- if (.Param "ShowRssButtonInSectionTermList") }}
+    {{- $rss := (.OutputFormats.Get "rss") }}
+    {{- if (eq .Kind `page`) }}
+    {{- $rss = (.Parent.OutputFormats.Get "rss") }}
+    {{- end }}
+    {{- with $rss }}
+    <a href="{{ .RelPermalink }}" title="RSS" aria-label="RSS">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" height="23">
+        <path d="M4 11a9 9 0 0 1 9 9" />
+        <path d="M4 4a16 16 0 0 1 16 16" />
+        <circle cx="5" cy="19" r="1" />
+      </svg>
+    </a>
+    {{- end }}
+    {{- end }}
+  </h1>
+  {{- if .Description }}
+  <div class="post-description">
+    {{ .Description }}
+  </div>
+  {{- end }}
+</header>
+
+{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+
+{{- if site.Params.ShowAllPagesInArchive }}
+{{- $pages = site.RegularPages }}
+{{- end }}
+
+<div class="timeline-container">
+  <div class="timeline-line"></div>
+  {{- range $pages.GroupByPublishDate "2006" }}
+  {{- if ne .Key "0001" }}
+  {{- $year := replace .Key "0001" "" }}
+  <div class="timeline-year-section">
+    <div class="timeline-year-marker">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">{{ $year }}</div>
+      <div class="timeline-count">{{ len .Pages }} 篇</div>
+    </div>
+    <div class="timeline-posts">
+      {{- range .Pages }}
+      {{- if eq .Kind "page" }}
+      <div class="timeline-card">
+        <a class="timeline-card-link" href="{{ .Permalink }}">
+          <div class="timeline-card-content">
+            <div class="timeline-card-date">
+              {{- .Date.Format "01-02" -}}
+            </div>
+            <h3 class="timeline-card-title">
+              {{- .Title | markdownify -}}
+              {{- if .Draft }}
+              <span class="draft-badge">草稿</span>
+              {{- end }}
+            </h3>
+            {{- if .Summary }}
+            <p class="timeline-card-summary">{{ .Summary | truncate 100 }}</p>
+            {{- end }}
+            <div class="timeline-card-meta">
+              {{- with .Params.categories }}
+              <span class="timeline-card-category">
+                {{- range first 1 . }}{{ . }}{{- end }}
+              </span>
+              {{- end }}
+            </div>
+          </div>
+        </a>
+      </div>
+      {{- end }}
+      {{- end }}
+    </div>
+  </div>
+  {{- end }}
+  {{- end }}
+</div>
+
+<style>
+.timeline-container {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 100px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border, #e0e0e0);
+}
+
+.timeline-year-section {
+  display: flex;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline-year-marker {
+  width: 100px;
+  padding-right: 20px;
+  text-align: right;
+  position: relative;
+}
+
+.timeline-dot {
+  position: absolute;
+  right: -6px;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--theme, #fff);
+  border: 3px solid var(--primary, #2196f3);
+  z-index: 1;
+}
+
+.timeline-year {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--primary, #2196f3);
+}
+
+.timeline-count {
+  font-size: 0.85em;
+  color: var(--secondary, #666);
+}
+
+.timeline-posts {
+  flex: 1;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.timeline-card {
+  background: var(--entry, #fff);
+  border-radius: 8px;
+  border: 1px solid var(--border, #e0e0e0);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.timeline-card:hover {
+  transform: translateX(5px);
+  border-color: var(--primary, #2196f3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-card-link {
+  display: block;
+  padding: 15px 20px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.timeline-card-date {
+  font-size: 0.9em;
+  color: var(--secondary, #666);
+  margin-bottom: 5px;
+}
+
+.timeline-card-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: var(--primary, #333);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.draft-badge {
+  font-size: 0.7em;
+  background: #ff9800;
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.timeline-card-summary {
+  font-size: 0.9em;
+  color: var(--secondary, #666);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.timeline-card-meta {
+  margin-top: 10px;
+  font-size: 0.85em;
+}
+
+.timeline-card-category {
+  color: var(--primary, #2196f3);
+}
+
+/* 深色模式适配 */
+@media (prefers-color-scheme: dark) {
+  .timeline-line {
+    background: var(--border, #333);
+  }
+
+  .timeline-card {
+    background: var(--entry, #1e1e1e);
+    border-color: var(--border, #333);
+  }
+
+  .timeline-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 30px;
+  }
+
+  .timeline-year-marker {
+    width: 30px;
+    padding-right: 10px;
+  }
+
+  .timeline-year {
+    font-size: 1em;
+  }
+
+  .timeline-count {
+    display: none;
+  }
+
+  .timeline-posts {
+    padding-left: 20px;
+  }
+
+  .timeline-card-link {
+    padding: 12px 15px;
+  }
+}
+</style>
+
+{{- end }}
