@@ -14,7 +14,7 @@ summary: links
         </div>
         <img src="https://cdn.jsdelivr.net/gh/Pink-29/Pink-29.github.io/favicon.ico" alt="友链LOGO" loading="lazy">
     </a>
-    <a class="friend-link" href="https://sheng666.top/" target="_blank">
+    <a class="friend-link" href="https://m2d.fun/" target="_blank">
         <div class="info">
             <div class="name">BFS</div>
             <div class="description">分享一些技术文章</div>
@@ -35,7 +35,7 @@ summary: links
         </div>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnfxGNwUz1HcvwlfbN7sqbeb6eMHh43XCRPA&s" alt="友链LOGO" loading="lazy">
     </a>
-    <a class="friend-link" href="https://xfwmhxx.github.io/My-Blog/" target="_blank">
+    <a class="friend-link" href="http://hxxblog.top" target="_blank">
         <div class="info">
             <div class="name">逐梦者's 部落格</div>
             <div class="description">分享一些技术文章</div>
