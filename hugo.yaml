@@ -78,10 +78,6 @@ languages:
           name: 🧩分类
           url: /categories
           weight: 30
-        - identifier: tags
-          name: 🔖标签                     # 菜单项显示名称：标签
-          url: /tags                       # 指向标签页面
-          weight: 40
         - identifier: about
           name: 🙋🏻‍♂️关于                  # 菜单项显示名称：关于
           url: /about                      # 指向“关于”页面
