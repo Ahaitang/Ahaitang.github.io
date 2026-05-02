@@ -16,10 +16,17 @@ summary: about
 
 
 
-历史版本(更新日期): 2026-04-29  
-目前正在努力学习想要找到一份好的工作，也希望能在这个过程中能学到更多的知识。  
-当然也不希望一直的当 SQL Boy, 希望能有开更高级开发的机会。  
-也希望能在这个过程中，能和大家一起交流，一起进步。
+<div style="display: flex; align-items: center; gap: 1rem; color: #888; font-size: 0.9em;">
+  <span style="flex: 1; border-bottom: 1px solid #ddd;"></span>
+  <span>历史版本</span>
+  <span style="flex: 1; border-bottom: 1px solid #ddd;"></span>
+</div>
+
+<div style="display: flex; align-items: center; gap: 1rem; color: #888; font-size: 0.9em;">
+  <span style="flex: 1; border-bottom: 1px solid #ddd;"></span>
+  <span style="text-align: center;">历史版本(更新日期): 2026-04-29<br>目前正在努力学习想要找到一份好的工作，也希望能在这个过程中能学到更多的知识。<br>当然也不希望一直的当 SQL Boy, 希望能有开更高级开发的机会。<br>也希望能在这个过程中，能和大家一起交流，一起进步。</span>
+  <span style="flex: 1; border-bottom: 1px solid #ddd;"></span>
+</div>
 
 ---  
 
