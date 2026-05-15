@@ -1,4 +1,4 @@
-{{ if not (eq .Page.Params.password nil) }}
+{{ if not (eq .Page.Params.passwordHash nil) }}
 {{ if not (.Page.Scratch.Get "password_verified") }}
 <div class="password-protection">
     <form id="password-form" onsubmit="return verifyPassword(event)">
@@ -17,7 +17,7 @@
 </div>
 
 <!-- 引入CryptoJS库用于签名计算 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script src="/js/crypto-js.min.js"></script>
 <!-- 引入MinIO客户端 -->
 <script src="/js/minio-client.js?v=20260421"></script>
 
@@ -57,9 +57,10 @@ async function testMinioConnection() {
 function verifyPassword(event) {
     event.preventDefault();
     const input = document.getElementById('password-input');
-    const correctPassword = '{{ .Page.Params.password }}';
+    const correctHash = '{{ .Page.Params.passwordHash }}';
+    const inputHash = CryptoJS.SHA256(input.value).toString();
     
-    if (input.value === correctPassword) {
+    if (inputHash === correctHash) {
         localStorage.setItem('gallery_auth_{{ .Page.File.Path }}', '1');
         document.querySelector('.password-protection').style.display = 'none';
         document.getElementById('gallery-content').style.display = 'block';

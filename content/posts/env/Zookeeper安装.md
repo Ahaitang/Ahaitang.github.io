@@ -3,17 +3,17 @@ title: 'Zookeeper 环境配置'
 date: 2025-03-17T17:08:19+08:00
 lastmod: 2025-03-17T17:08:19+08:00
 weight: 5
-author: ["Ahaitang"]
+author: ["AHaiTang"]
 categories:
 - BigData
 - 环境安装
 tags:
-- 标签1
-- 标签2
+- Zookeeper
+- 环境搭建
 # summary->在列表页展现的摘要内容，自动生成，内容默认前70个字符，可通过此参数自定义，一般无需专门设置
 summary: ""
 # description->需要自己编写的文章描述，是搜索引擎呈现在搜索结果链接下方的网页简介，建议设置
-description: ""
+description: "Zookeeper 分布式集群安装教程，涵盖 Server ID 配置、myid 文件创建及集群启动验证。"
 weight: # 输入1可以顶置文章，用来给文章展示排序，不填就默认按时间排序
 slug: ""
 draft: false # 是否为草稿

@@ -19,7 +19,7 @@ defaultContentLanguageInSubdir: false # 是否要在地址栏加上默认的语�
 
 minify:
     disableXML: true                         # 禁用对 XML 文件的压缩
-    # minifyOutput: true                      # 可启用所有输出文件的压缩（当前被注释掉）
+    minifyOutput: true                       # 启用所有输出文件的压缩
 
 permalinks:
   post: "/:title/"                           # 定义文章永久链接结构，这里使用文章标题作为 URL 部分
@@ -96,6 +96,13 @@ params:
   env: production                        # 当前环境设置为 production，用于启用 GA、OpenGraph、Twitter Cards 等功能
   description: "这是一个纯粹的博客......"   # 网站描述
   author: AHaiTang                        # 默认文章作者（此处选择了 AHaiTang，如需使用 Shaohan Tian 可自行修改）
+  keywords:                               # 站点级 SEO 关键词
+    - 大数据
+    - Hadoop
+    - 算法
+    - 环境配置
+    - 博客
+    - AHaiTang
   defaultTheme: auto                      # 默认主题模式，auto 表示自动选择（默认暗色背景）
   disableThemeToggle: false               # 允许主题切换按钮
   DateFormat: "2006-01-02"                # 日期格式（按照 Go 语言格式化规则）

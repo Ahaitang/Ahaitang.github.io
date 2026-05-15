@@ -4,7 +4,7 @@ date: 2024-01-08T14:20:14+08:00
 lastmod: 2024-01-08T14:20:14+08:00
 author: ["AHaiTang"]
 type: "gallery"
-password: "qazwsx123" # 设置访问密码
+passwordHash: "d2b80cb169fae74f334bbf5cd29ffa03740279f03bff8d06e4e49cdf9b07a4e4" # 密码的SHA256哈希值
 draft: false
 comments: false
 showToc: false

@@ -3,7 +3,7 @@ title: '虚拟机安装——CentOS'
 slug: 'Virtual machine installation'
 date: 2025-03-17T16:53:22+08:00
 weight: 5
-author: ["Ahaitang"]
+author: ["AHaiTang"]
 categories:
 - BigData
 - 环境安装
