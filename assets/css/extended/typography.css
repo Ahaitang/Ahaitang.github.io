@@ -1,0 +1,59 @@
+/* 中文排版优化 */
+.post-content {
+    line-height: 1.8;
+    font-size: 17px;
+    letter-spacing: 0.02em;
+}
+
+.post-content p {
+    margin-bottom: 1.2em;
+}
+
+/* 引用块 */
+.post-content blockquote {
+    border-left: 3px solid var(--secondary);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 12px 20px;
+    border-radius: 0 4px 4px 0;
+}
+
+.dark .post-content blockquote {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* 代码块 */
+.post-content .highlight pre {
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    padding: 16px 20px;
+}
+
+.post-content pre code {
+    border: none;
+}
+
+/* TOC 目录 */
+.toc {
+    border-left: 2px solid var(--border);
+    padding-left: 12px;
+}
+
+.toc a {
+    line-height: 2em;
+    transition: color 0.2s ease;
+}
+
+/* 页脚 */
+.footer {
+    border-top: 1px solid var(--border);
+    padding-top: 40px;
+    font-size: 0.85em;
+    color: var(--secondary);
+}
+
+/* 面包屑 */
+.breadcrumbs {
+    color: var(--secondary);
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}

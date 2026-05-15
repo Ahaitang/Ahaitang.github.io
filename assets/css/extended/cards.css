@@ -1,0 +1,39 @@
+/* 文章列表卡片美化 */
+.post-entry {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.post-entry:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+}
+
+.dark .post-entry:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* 摘要文字 */
+.post-entry .entry-content {
+    color: var(--secondary);
+}
+
+/* 首篇文章统一 */
+.first-entry {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+
+.first-entry:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+}
+
+.dark .first-entry:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
