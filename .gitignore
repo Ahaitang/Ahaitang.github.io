@@ -31,3 +31,7 @@ resources/_gen/
 # MinIO敏感配置（包含密钥，不推送）
 config/_default/params.toml
 config/_default/minio.toml
+# 本地工具误装依赖（oh-my-opencode），过滤不提交
+node_modules/
+package.json
+package-lock.json
